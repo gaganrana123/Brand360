@@ -1,7 +1,20 @@
-export default function App() {
+import { BrowserRouter as Router } from 'react-router-dom';
+import Navbar from './components/common/Navbar';
+import Footer from './components/common/Footer';
+import AppRoutes from './Routes/AppRoutes';
+
+function App() {
   return (
-    <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
-  )
+    <Router>
+      <div className="flex flex-col min-h-screen">
+        <Navbar />
+        <main className="flex-grow">
+        <AppRoutes/>
+        </main>
+        <Footer />
+      </div>
+    </Router>
+  );
 }
+
+export default App;
