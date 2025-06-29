@@ -1,355 +1,224 @@
-"use client"
+"use client";
 
 export default function Hero() {
-  const styles = {
-    fadeInLeft: {
-      animation: "fadeInLeft 1s ease-out",
-    },
-    fadeInRight: {
-      animation: "fadeInRight 1s ease-out 0.3s both",
-    },
-    slideDown: {
-      animation: "slideDown 0.8s ease-out 0.5s both",
-    },
-    slideUp: {
-      animation: "slideUp 0.8s ease-out both",
-    },
-    slideRight: {
-      animation: "slideRight 20s linear infinite",
-    },
-    float: {
-      animation: "float 4s ease-in-out infinite",
-    },
-    gradient: {
-      backgroundSize: "200% 200%",
-      animation: "gradient 3s ease infinite",
-    },
-    bounceSlow: {
-      animation: "bounceSlow 3s ease-in-out infinite",
-    },
-    pingSlow: {
-      animation: "pingSlow 3s cubic-bezier(0, 0, 0.2, 1) infinite",
-    },
-  }
-
   return (
     <>
       <style>{`
-        @keyframes fadeInLeft {
-          from {
-            opacity: 0;
-            transform: translateX(-50px);
-          }
-          to {
-            opacity: 1;
-            transform: translateX(0);
-          }
-        }
+  /* Global Animation Defaults & Overrides */
+  :root {
+    --animation-ease-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --animation-ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1);
+    --animation-ease-in-out-sine: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  }
 
-        @keyframes fadeInRight {
-          from {
-            opacity: 0;
-            transform: translateX(50px);
-          }
-          to {
-            opacity: 1;
-            transform: translateX(0);
-          }
-        }
+  /* Fade In Left - More pronounced and smoother initial slide */
+  @keyframes fadeInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-80px) scale(0.95); /* Increased slide, added slight scale */
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0) scale(1);
+    }
+  }
 
-        @keyframes slideDown {
-          from {
-            opacity: 0;
-            transform: translateY(-20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
+  /* Fade In Right - More pronounced and smoother initial slide */
+  @keyframes fadeInRight {
+    from {
+      opacity: 0;
+      transform: translateX(80px) scale(0.95); /* Increased slide, added slight scale */
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0) scale(1);
+    }
+  }
 
-        @keyframes slideUp {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
+  /* Slide Down - Smooth entry from top with subtle bounce */
+  @keyframes slideDown {
+    0% {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+    70% {
+      opacity: 1;
+      transform: translateY(5px); /* Overshoot slightly for bounce */
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 
-        @keyframes slideRight {
-          from {
-            transform: translateX(-100%);
-          }
-          to {
-            transform: translateX(100vw);
-          }
-        }
+  /* Slide Up - Smooth entry from bottom with subtle bounce */
+  @keyframes slideUp {
+    0% {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    70% {
+      opacity: 1;
+      transform: translateY(-5px); /* Overshoot slightly for bounce */
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 
-        @keyframes float {
-          0%, 100% {
-            transform: translateY(0px);
-          }
-          50% {
-            transform: translateY(-10px);
-          }
-        }
+  /* Float - More organic, gentle breath-like movement */
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px) rotate(0deg);
+      box-shadow: 0 8px 15px rgba(0,0,0,0.2); /* Added subtle shadow pulse */
+    }
+    25% {
+      transform: translateY(-12px) rotate(-1deg);
+      box-shadow: 0 10px 18px rgba(0,0,0,0.25);
+    }
+    75% {
+      transform: translateY(-8px) rotate(1deg);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    }
+  }
 
-        @keyframes gradient {
-          0%, 100% {
-            background-position: 0% 50%;
-          }
-          50% {
-            background-position: 100% 50%;
-          }
-        }
+  /* Ping Slow - More controlled, softer pulse with fade */
+  @keyframes pingSlow {
+    0% {
+      transform: scale(0.8); /* Start slightly smaller */
+      opacity: 0.7;
+    }
+    50% {
+      transform: scale(1.1); /* Peak slightly larger */
+      opacity: 0.2;
+    }
+    100% {
+      transform: scale(1.2); /* End larger, fully faded */
+      opacity: 0;
+    }
+  }
 
-        @keyframes bounceSlow {
-          0%, 100% {
-            transform: translateY(0);
-          }
-          50% {
-            transform: translateY(-20px);
-          }
-        }
+  /* New: Subtle Glow Pulse (for background elements) */
+  @keyframes pulseGlow {
+    0% {
+      transform: scale(1.0);
+      opacity: 0.3;
+    }
+    50% {
+      transform: scale(1.05);
+      opacity: 0.5;
+    }
+    100% {
+      transform: scale(1.0);
+      opacity: 0.3;
+    }
+  }
 
-        @keyframes pingSlow {
-          0% {
-            transform: scale(1);
-            opacity: 1;
-          }
-          75%, 100% {
-            transform: scale(2);
-            opacity: 0;
-          }
-        }
+  /* New: Spin with Perspective (for decorative elements) */
+  @keyframes spin3D {
+    from {
+      transform: rotateY(0deg) rotateX(0deg);
+    }
+    to {
+      transform: rotateY(360deg) rotateX(10deg); /* Added slight X-axis rotation */
+    }
+  }
 
-        .hero-button {
-          transition: all 0.3s ease;
-        }
+  /* New: Breathe (for elements that expand/contract gently) */
+  @keyframes breathe {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.03);
+      opacity: 0.95;
+    }
+  }
 
-        .hero-button:hover {
-          transform: scale(1.05);
-        }
-
-        .hero-button-arrow {
-          transition: transform 0.3s ease;
-        }
-
-        .hero-button:hover .hero-button-arrow {
-          transform: translateX(4px);
-        }
-      `}</style>
-
-      <div
-        className="relative min-h-screen bg-gradient-to-br overflow-hidden"
-        style={{
-          background: "linear-gradient(135deg, #155c94 0%, #1e6ba8 50%, #2980b9 100%)",
-        }}
-      >
-        {/* Animated background elements */}
-        <div className="absolute inset-0">
-          <div
-            className="absolute top-20 left-10 w-72 h-72 rounded-full blur-xl"
-            style={{
-              backgroundColor: "rgba(255, 255, 255, 0.05)",
-              animation: "pulse 2s infinite",
-            }}
-          ></div>
-          <div
-            className="absolute bottom-20 right-10 w-96 h-96 rounded-full blur-2xl"
-            style={{
-              backgroundColor: "rgba(21, 92, 148, 0.3)",
-              ...styles.bounceSlow,
-            }}
-          ></div>
-          <div
-            className="absolute top-1/2 left-1/4 w-64 h-64 rounded-full blur-xl"
-            style={{
-              backgroundColor: "rgba(255, 255, 255, 0.1)",
-              ...styles.pingSlow,
-            }}
-          ></div>
-
-          {/* Geometric patterns */}
-          <div className="absolute bottom-0 left-0 w-full h-32" style={{ opacity: 0.2 }}>
-            <div className="flex space-x-4" style={styles.slideRight}>
-              {[...Array(20)].map((_, i) => (
-                <div
-                  key={i}
-                  className="w-8 h-8 transform rotate-45"
-                  style={{
-                    backgroundColor: "rgba(255, 255, 255, 0.2)",
-                    animation: `pulse 2s infinite ${i * 0.1}s`,
-                  }}
-                ></div>
-              ))}
-            </div>
-          </div>
-        </div>
-
+`}</style>
+      <div className="relative min-h-screen bg-white text-black overflow-hidden">
         <div className="relative z-10 container mx-auto px-4 py-8 flex flex-col lg:flex-row items-center justify-between min-h-screen">
-          {/* Hero Image Section */}
-          <div className="flex-1 flex justify-center lg:justify-start mb-12 lg:mb-0" style={styles.fadeInLeft}>
-            <div className="relative">
-              {/* Glowing effect behind image */}
+          <div
+            className="flex-1 flex justify-center lg:justify-start mb-12 lg:mb-0"
+            style={{ animation: "fadeInLeft 1.2s ease-out forwards" }}
+          >
+            <div className="relative group">
+              {" "}
+              {/* Added group class for hover effects */}
+              {/* Subtle, animated background glow */}
               <div
-                className="absolute inset-0 rounded-3xl blur-2xl"
+                className="absolute inset-0 rounded-3xl blur-3xl opacity-75 group-hover:opacity-100 transition-opacity duration-500"
                 style={{
-                  background: "linear-gradient(45deg, rgba(255, 255, 255, 0.2), rgba(21, 92, 148, 0.3))",
-                  transform: "scale(1.1)",
-                  animation: "pulse 3s infinite",
+                  backgroundColor: "rgba(173, 216, 230, 0.4)",
+                  transform: "scale(1.05)",
+                  animation: "pulseGlow 3s infinite alternate",
                 }}
               ></div>
-
-              {/* Main image container */}
-              <div
-                className="relative rounded-3xl p-6 shadow-2xl border"
-                style={{
-                  backgroundColor: "rgba(255, 255, 255, 0.1)",
-                  backdropFilter: "blur(10px)",
-                  borderColor: "rgba(255, 255, 255, 0.2)",
-                  ...styles.float,
-                }}
-              >
+              <div className="relative rounded-3xl p-7 shadow-2xl border border-gray-700 bg-gradient-to-br from-gray-900/50 to-black/60 backdrop-blur-xl animate-float-subtle overflow-hidden">
+                {" "}
+                {/* Added overflow-hidden */}
                 <img
-                  src="hero2.png"
-                  alt="Brand 360 - We Make Your Brand Unforgettable"
-                  className="w-full h-auto rounded-2xl shadow-lg"
+                  src="/hero2.png"
+                  alt="Hero"
+                  className="w-full h-auto rounded-2xl shadow-lg transition-transform duration-500 group-hover:scale-105"
                   style={{ maxWidth: "600px" }}
                 />
-
-                {/* Floating elements around the image */}
-                <div
-                  className="absolute -top-4 -right-4 w-16 h-16 bg-white rounded-full shadow-lg flex items-center justify-center"
-                  style={{ animation: "bounce 2s infinite" }}
-                >
-                  <span className="text-2xl" style={{ color: "#155c94" }}>
-                    🎯
-                  </span>
+                {/* Decorative, dynamic elements */}
+                <div className="absolute -top-6 -right-6 w-20 h-20 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full flex items-center justify-center animate-spin-slow opacity-80">
+                  <span className="text-3xl text-white drop-shadow-lg">✨</span>
                 </div>
+                <div className="absolute -bottom-6 -left-6 w-16 h-16 bg-gradient-to-br from-green-400 to-teal-500 rounded-full flex items-center justify-center animate-scale-ping opacity-80">
+                  <span className="text-2xl text-white drop-shadow-lg">🚀</span>
+                </div>
+                {/* Optional: Add a subtle overlay for extra depth */}
                 <div
-                  className="absolute -bottom-4 -left-4 w-12 h-12 rounded-full shadow-lg flex items-center justify-center"
+                  className="absolute inset-0 rounded-3xl pointer-events-none"
                   style={{
-                    background: "linear-gradient(45deg, #155c94, #2980b9)",
-                    animation: "pulse 2s infinite",
+                    background:
+                      "linear-gradient(to top right, rgba(0,0,0,0.1), rgba(255,255,255,0.05))",
                   }}
-                >
-                  <span className="text-xl">✨</span>
-                </div>
+                ></div>
               </div>
             </div>
           </div>
 
-          {/* Text Content */}
-          <div className="flex-1 text-center lg:text-right lg:pl-12" style={styles.fadeInRight}>
-            <div className="mb-6">
-              <span
-                className="inline-block px-4 py-2 rounded-full text-sm font-medium mb-4"
-                style={{
-                  backgroundColor: "rgba(255, 255, 255, 0.2)",
-                  backdropFilter: "blur(10px)",
-                  color: "rgba(255, 255, 255, 0.9)",
-                  ...styles.slideDown,
-                }}
-              >
-                360° Branding Solutions
-              </span>
-            </div>
-
-            <h1 className="text-4xl lg:text-6xl xl:text-7xl font-bold mb-6 text-white leading-tight">
-              Transform Your{" "}
-              <span
-                className="bg-clip-text text-transparent"
-                style={{
-                  background: "linear-gradient(45deg, #ffffff, #bfdbfe)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  ...styles.gradient,
-                }}
-              >
-                Brand Identity
-              </span>
+          {/* Text Section */}
+          <div
+            className="flex-1 text-center lg:text-right lg:pl-12"
+            style={{ animation: "fadeInRight 1s ease-out 0.3s both" }}
+          >
+            <h1 className="text-4xl lg:text-6xl font-bold leading-tight mb-6">
+              Build an Iconic{" "}
+              <span className=" text-primary">Brand Identity</span>
             </h1>
 
-            <p
-              className="text-xl lg:text-2xl mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed"
-              style={{ color: "rgba(255, 255, 255, 0.9)" }}
-            >
-              We create unforgettable brand experiences that resonate with your audience and drive business growth
-              through innovative design and strategic thinking.
+            <p className="text-xl lg:text-2xl text-black mb-8 max-w-2xl mx-auto lg:mx-0">
+              We create unforgettable brand experiences through creative
+              storytelling and full-scale marketing execution.
             </p>
 
-            {/* Feature highlights */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8 max-w-2xl mx-auto lg:mx-0">
-              {[
-                { icon: "🎨", title: "Creative Design", delay: "0.2s" },
-                { icon: "📈", title: "Brand Strategy", delay: "0.4s" },
-                { icon: "🚀", title: "Digital Growth", delay: "0.6s" },
-              ].map((item, index) => (
-                <div
-                  key={index}
-                  className="rounded-xl p-4 border"
-                  style={{
-                    backgroundColor: "rgba(255, 255, 255, 0.1)",
-                    backdropFilter: "blur(10px)",
-                    borderColor: "rgba(255, 255, 255, 0.2)",
-                    animation: `slideUp 0.8s ease-out ${item.delay} both`,
-                  }}
-                >
-                  <div className="text-2xl mb-2">{item.icon}</div>
-                  <div className="text-white font-semibold">{item.title}</div>
-                </div>
-              ))}
-            </div>
-
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <button
-                className="hero-button px-8 py-4 bg-white font-bold rounded-full shadow-lg"
-                style={{ color: "#155c94" }}
-              >
-                <span className="flex items-center justify-center">
-                  Start Your Journey
-                  <svg className="ml-2 w-5 h-5 hero-button-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </span>
-              </button>
-              <button
-                className="hero-button px-8 py-4 border-2 border-white text-white font-semibold rounded-full"
-                style={{ backdropFilter: "blur(10px)" }}
-              >
-                View Our Work
-              </button>
+            <div className="grid grid-cols-2 sm:grid-cols-2 gap-4 mb-8 max-w-2xl mx-auto lg:mx-0">
+              {["Digital Marketing", "ATL", "OOH", "Media Buying"].map(
+                (item, i) => (
+                  <div
+                    key={i}
+                    className="rounded-xl p-4 border bg-black backdrop-blur"
+                    style={{
+                      animation: `slideUp 0.8s ease-out ${0.4 + i * 0.2}s both`,
+                    }}
+                  >
+                    <div className="text-white font-semibold flex justify-center">
+                      {item}
+                    </div>
+                  </div>
+                )
+              )}
             </div>
           </div>
-        </div>
-
-        {/* Scroll indicator */}
-        <div
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-          style={{ animation: "bounce 2s infinite" }}
-        >
-          <div
-            className="w-6 h-10 border-2 rounded-full flex justify-center"
-            style={{ borderColor: "rgba(255, 255, 255, 0.5)" }}
-          >
-            <div
-              className="w-1 h-3 rounded-full mt-2"
-              style={{
-                backgroundColor: "rgba(255, 255, 255, 0.7)",
-                animation: "pulse 2s infinite",
-              }}
-            ></div>
-          </div>
-          <p className="text-xs mt-2 text-center" style={{ color: "rgba(255, 255, 255, 0.7)" }}>
-            Scroll Down
-          </p>
         </div>
       </div>
     </>
-  )
+  );
 }
