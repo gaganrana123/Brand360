@@ -2,9 +2,9 @@ import React from 'react';
 
 const ServiceCard = ({ service }) => {
   return (
-    <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl">
+    <div className="bg-white rounded-3xl shadow-xl overflow-hidden transition-all duration-300 hover:shadow-xl">
       {/* Image Section */}
-      <div className="relative h-56 overflow-hidden">
+      <div className="relative h-44 overflow-hidden">
         <img 
           src={service.image} 
           alt={service.title} 

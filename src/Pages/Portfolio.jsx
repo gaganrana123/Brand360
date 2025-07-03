@@ -3,38 +3,42 @@ import { Eye, LayoutGrid, Palette } from "lucide-react";
 
 const projects = [
   {
-    title: "Brand Identity – Ripple Tea",
+    title: "Kirti Samaroha 2081– Shivam Cement",
     description:
-      "A full identity redesign from packaging to promotion for a local tea brand.",
-    image: "/portfolio/ripple-tea.jpg",
+      "From the first brainstorm to the final spotlight — Kirti Samaroha 2081 was an event crafted with purpose and precision. Conceptualized and managed by Brand Three Sixty Pvt. Ltd. for Shivam Cement.",
+    image: "/Shivam.png",
     link: "#",
-    tags: ["Branding", "Packaging", "Design"],
     gradient: "from-purple-500 to-indigo-600",
   },
   {
-    title: "TVC Campaign – Spark Energy Drink",
-    description: "Scripted and produced a TV commercial aired nationwide.",
-    image: "/portfolio/spark-energy.jpg",
+    title: "Automobile Campaign – DEEPAL",
+    description: "Deepal lit up Chitwan with the power of innovation! The DEEPAL Launch Event was more than a celebration—it was the beginning of an electric revolution. Managed by Brand Three Sixty Pvt. Ltd",
+    image: "/Deepal.png",
     link: "#",
-    tags: ["TVC", "Scriptwriting", "Media"],
     gradient: "from-red-500 to-pink-600",
   },
   {
-    title: "Digital Launch – Urban Gym",
+    title: "Automobile Campaign – Dongfeng Nammi",
     description:
-      "Led a digital-first launch with influencer strategy and ad funneling.",
-    image: "/portfolio/urban-gym.jpg",
+      "The Grand Opening of the state-of-the-art Dongfeng Nammi Showroom in Nagpokhari, brought to you by MAW Vriddhi Motors Pvt. Ltd. This milestone reflects Nammi's promise of delivering unmatched service and a superior customer experience.",
+    image: "/Nami.png",
     link: "#",
-    tags: ["Digital", "Launch", "Fitness"],
     gradient: "from-teal-500 to-cyan-600",
   },
   {
-    title: "Event Activation – Book Fest",
+    title: "Beauty Pageant –  Miss Universe Nepal 2024",
     description:
-      "Concept and execution of an immersive book festival event with branded zones.",
-    image: "/portfolio/book-fest.jpg",
+      "Global Glamour Venture On 11 January 2024, Global Glamour Venture organized a press conference announcing the change of organizers of Miss Universe Nepal. The press conference event managed by Brand Three Sixty.",
+    image: "/MUN.png",
     link: "#",
-    tags: ["Event", "Activation", "Experience"],
+    gradient: "from-orange-500 to-yellow-500",
+  },
+  {
+    title: "Social Event – नागरिक नायक 2082",
+    description:
+      "Honoring Heroes, Inspiring Change — नागरिक नायक 2082. Emarkable evening celebrating individuals whose actions have truly made a difference in our society.",
+    image: "/Media.png",
+    link: "#",
     gradient: "from-orange-500 to-yellow-500",
   },
 ];
@@ -43,12 +47,13 @@ const Portfolio = () => {
   return (
     <>
       <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100">
-        <section className="relative bg-gradient-to-r from-blue-800 to-indigo-900 text-white py-20">
-          <div className="container mx-auto px-4 text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-4">
+        {/* Hero Section */}
+        <section className="relative bg-gradient-to-r from-blue-800 to-indigo-900 text-white py-16 md:py-20">
+          <div className="container mx-auto px-4 sm:px-6 text-center">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
               Our Portfolio
             </h1>
-            <p className="text-xl md:text-2xl max-w-3xl mx-auto mb-8">
+            <p className="text-base sm:text-lg md:text-xl max-w-3xl mx-auto">
               Explore our selected work across campaigns, branding, digital
               media, and experiences that moved the needle for our clients.
             </p>
@@ -56,28 +61,26 @@ const Portfolio = () => {
         </section>
 
         {/* Projects Grid */}
-        <div className="relative px-4 sm:px-6 lg:px-8 pb-20 py-16">
-           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Featured Work</h2>
-            
+        <div className="px-4 sm:px-3 lg:px-8 py-12 sm:py-16">
+          <div className="text-center mb-10 sm:mb-14 md:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800">
+              Featured Work
+            </h2>
           </div>
+          
           <div className="max-w-8xl mx-auto">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-6 sm:gap-8">
               {projects.map((project, index) => (
                 <div
                   key={index}
-                  className="group bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 relative overflow-hidden"
-                  style={{
-                    animationDelay: `${index * 100}ms`,
-                    animation: "fadeInUp 0.8s ease-out forwards",
-                  }}
+                  className="group bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden flex flex-col h-full"
                 >
-                  {/* Image Container - Fixed Size */}
-                  <div className="relative h-48 w-full flex items-center justify-center mb-4 bg-gray-50 rounded-lg overflow-hidden">
+                  {/* Image Container */}
+                  <div className="relative h-48 sm:h-52 w-full flex-shrink-0 overflow-hidden">
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110"
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                     <div
                       className={`absolute inset-0 bg-gradient-to-b ${project.gradient} opacity-0 group-hover:opacity-20 transition-opacity duration-300`}
@@ -85,43 +88,24 @@ const Portfolio = () => {
                   </div>
 
                   {/* Content */}
-                  <div className="relative">
-                    <h3 className="text-xl font-semibold text-black mb-3 group-hover:text-indigo-600 transition-colors">
+                  <div className="p-5 sm:p-6 flex flex-col">
+                    <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2 group-hover:text-indigo-600 transition-colors">
                       {project.title}
                     </h3>
 
-                    <p className="text-sm text-gray-600 leading-relaxed mb-4 group-hover:text-gray-800 transition-colors">
+                    <p className="text-sm text-gray-600 mb-4">
                       {project.description}
                     </p>
 
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {project.tags.map((tag, i) => (
-                        <span
-                          key={i}
-                          className="bg-gray-100 border border-gray-200 px-3 py-1 rounded-full text-xs text-gray-600 group-hover:bg-indigo-50 group-hover:border-indigo-100 group-hover:text-indigo-600 transition-colors"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
+                   
 
-                    <a
-                      href={project.link}
-                      className="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-indigo-600 transition-colors group-hover:text-indigo-600"
-                    >
-                      <Eye className="w-4 h-4" />
-                      View Project
-                    </a>
-
-                    {/* Hover Effect */}
-                    <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-indigo-400 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   </div>
 
                   {/* Animated Dots */}
-                  <div className="absolute top-3 right-3 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="w-2 h-2 bg-indigo-500 rounded-full animate-ping"></div>
-                    <div className="w-2 h-2 bg-purple-500 rounded-full animate-ping delay-75"></div>
-                    <div className="w-2 h-2 bg-pink-500 rounded-full animate-ping delay-150"></div>
+                  <div className="absolute top-3 right-3 flex gap-1.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="w-1.5 h-1.5 bg-indigo-500 rounded-full animate-ping"></div>
+                    <div className="w-1.5 h-1.5 bg-purple-500 rounded-full animate-ping delay-75"></div>
+                    <div className="w-1.5 h-1.5 bg-pink-500 rounded-full animate-ping delay-150"></div>
                   </div>
                 </div>
               ))}

@@ -33,7 +33,7 @@ export default function WhatWeDo() {
   return (
     <div
       id="services"
-      className="bg-black text-white py-16 px-4 sm:px-6 lg:px-8"
+      className=" bg-indigo-950 text-white py-16 px-4 sm:px-6 lg:px-8"
     >
       <div className="max-w-7xl mx-auto">
         {/* Header */}
@@ -53,7 +53,7 @@ export default function WhatWeDo() {
             {services.map((service, index) => (
               <div key={index}>
                 <div
-                  className={`cursor-pointer px-6 py-5 rounded-lg transition-all duration-300 border border-white/10 hover:border-white backdrop-blur-md ${
+                  className={`cursor-pointer px-6 py-5 rounded-3xl transition-all duration-300 border border-white/10 hover:border-white backdrop-blur-md ${
                     index === activeIndex
                       ? "bg-white text-black shadow-lg"
                       : "hover:bg-white/10"
@@ -78,7 +78,7 @@ export default function WhatWeDo() {
                     <img
                       src={service.image}
                       alt={service.title}
-                      className="w-full max-w-xs sm:max-w-md rounded-lg shadow-2xl object-cover transition duration-500 ease-in-out"
+                      className="w-full max-w-xs sm:max-w-md rounded-full shadow-2xl object-cover transition duration-500 ease-in-out"
                     />
                   </div>
                 )}
@@ -91,7 +91,7 @@ export default function WhatWeDo() {
             <img
               src={services[activeIndex].image}
               alt={services[activeIndex].title}
-              className="w-full max-w-xs sm:max-w-md lg:max-w-lg rounded-lg shadow-2xl object-cover transition duration-500 ease-in-out"
+              className="w-full max-w-xs sm:max-w-md lg:max-w-lg rounded-3xl shadow-2xl object-cover transition duration-500 ease-in-out"
             />
           </div>
         </div>
