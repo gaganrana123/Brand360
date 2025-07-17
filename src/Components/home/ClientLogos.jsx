@@ -1,14 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 const ClientLogos = () => {
-  const [scrollY, setScrollY] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   const clients = [
     { src: "/1.png" },
     { src: "/2.png" },
@@ -25,35 +17,56 @@ const ClientLogos = () => {
     { src: "/13.png" },
   ];
 
-  return (
-    <div className="py-6">
-      <div className="max-w-7xl mx-auto bg-gray-100 shadow-lg rounded-xl p-6">
-        {/* Heading */}
-        <div className="text-center">
-          <h1 className="text-4xl sm:text-4xl font-extrabold">OUR CLIENTS</h1>
-          <div className=" w-60 h-1 bg-cyan-500 mx-auto mb-4"></div>
-          <p className="text-primary mt-2 text-2xl">Partners</p>
-        </div>
+  const repeatedClients = [...clients, ...clients]; // duplicate for smooth scrolling
 
-        {/* Logo Grid - Increased image size */}
-        <div className="max-w-8xl mx-auto px-2 sm:px-2 lg:px-4">
-          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols- items-center justify-center gap-y-4">
-            {clients.map((client, index) => (
-              <div
-                key={index}
-                className="flex justify-center items-center h-40 sm:h-48 md:h-56"
-              >
-                <img
-                  src={client.src}
-                  alt={`Client ${index + 1}`}
-                  className="max-w-[90%] max-h-[90%] object-contain transition-transform duration-300 hover:scale-110"
-                  onError={(e) => {
-                    e.target.style.display = "none";
-                  }}
-                />
-              </div>
-            ))}
-          </div>
+  return (
+    <div className="py-10 bg-white overflow-hidden">
+      {/* Heading */}
+      <div className="text-center mb-12">
+        <h1 className="text-5xl font-extrabold text-primary">OUR CLIENTS</h1>
+        <div className="w-40 h-1 bg-cyan-500 mx-auto my-3"></div>
+        <p className="text-xl text-text">Partners</p>
+      </div>
+
+      {/* Top Row (Left to Right) */}
+      <div className="overflow-hidden mb-0">
+        <div className="flex gap-16 animate-marquee min-w-[200%]">
+          {repeatedClients.map((client, index) => (
+            <div
+              key={`top-${index}`}
+              className="flex justify-center items-center min-w-[200px] h-[160px]"
+            >
+              <img
+                src={client.src}
+                alt={`Client ${index + 1}`}
+                className="w-60 h-60 object-contain transition-transform duration-300 hover:scale-110"
+                onError={(e) => {
+                  e.target.style.display = "none";
+                }}
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Bottom Row (Right to Left) */}
+      <div className="overflow-hidden">
+        <div className="flex gap-16 animate-marquee-reverse min-w-[200%]">
+          {repeatedClients.map((client, index) => (
+            <div
+              key={`bottom-${index}`}
+              className="flex justify-center items-center min-w-[200px] h-[160px]"
+            >
+              <img
+                src={client.src}
+                alt={`Client ${index + 1}`}
+                className="w-60 h-60 object-contain transition-transform duration-300 hover:scale-110"
+                onError={(e) => {
+                  e.target.style.display = "none";
+                }}
+              />
+            </div>
+          ))}
         </div>
       </div>
     </div>

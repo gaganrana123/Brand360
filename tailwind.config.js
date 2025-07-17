@@ -1,11 +1,12 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
- theme: {
+  theme: {
     extend: {
       colors: {
-        primary: "#0052cc", // Professional blue
+        primary: "#284F8F", // Professional blue
         "neutral-1": "#f4f5f7", // Light gray
         "neutral-2": "#dfe1e6", // Medium gray
         accent: "#36b37e", // Emerald green
@@ -43,19 +44,33 @@ module.exports = {
           "5": "hsl(var(--chart-5))",
         },
       },
-       fontFamily: {
+      fontFamily: {
         sans: ["var(--font-inter)", "sans-serif"],
         custom: ["'Fontspring Bold Italic'", "sans-serif"],
         Qasira: ["Qasira", "sans-serif"],
       },
-        borderRadius: {
+      borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+
+      // ✅ Add animation for both directions
+      animation: {
+        marquee: "marquee 40s linear infinite",
+        "marquee-reverse": "marquee-reverse 40s linear infinite",
+      },
+      keyframes: {
+        marquee: {
+          "0%": { transform: "translateX(0%)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
+        "marquee-reverse": {
+          "0%": { transform: "translateX(-50%)" },
+          "100%": { transform: "translateX(0%)" },
+        },
+      },
     },
   },
-  plugins: [
-  
-  ],
+  plugins: [],
 };
