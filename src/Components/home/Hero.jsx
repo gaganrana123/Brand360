@@ -1,37 +1,36 @@
+import React from "react";
+
 export default function Hero() {
   return (
-    <section className=" py-10 lg:py-16 bg-neutral-2">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center">
-          <div className="inline-flex items-center px-4 py-2 bg-accent/10 text-primary rounded-full text-sm font-medium mb-8">
-            Brand Three Sixty
-          </div>
+    <section className="relative min-h-screen bg-neutral-900 text-white overflow-hidden">
+      {/* Background Image (Blurred + Dark Overlay) */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src="/cover.png"
+          alt="Background"
+          className="w-full h-full object-cover blur-sm object-top brightness-75"
+        />
+        
+      </div>
 
-          <h1 className="text-4xl md:text-6xl font-bold text-text mb-6">
-            Build an Iconic{" "}
-            <span className="text-primary"> Brand Identity</span>
-          </h1>
-
-          <p className="text-xl text-text/70 mb-8 max-w-3xl mx-auto">
-            We create unforgettable brand experiences through creative
-            storytelling and full-scale marketing execution.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-primary text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-primary/90 transition-colors flex items-center justify-center">
-              Digital Marketing
-            </button>
-            <button className="border-2 border-neutral-1 text-text px-8 py-4 rounded-full text-lg font-semibold hover:bg-neutral-1 transition-colors">
-              ATL
-            </button>
-            <button className="border-2 border-neutral-1 text-text px-8 py-4 rounded-full text-lg font-semibold hover:bg-neutral-1 transition-colors">
-              OOH
-            </button>
-            <button className="bg-primary text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-primary/90 transition-colors flex items-center justify-center">
-              Media Buying
-            </button>
-          </div>
+      {/* Hero Content */}
+      <div className="relative z-10 flex flex-col justify-center items-center text-center px-6 py-20 lg:py-32 max-w-4xl mx-auto">
+        <div className="inline-flex items-center px-5 py-2 bg-white/10 backdrop-blur-sm text-primary rounded-full text-sm font-semibold mb-6">
+          Brand Three Sixty Pvt. Ltd.
         </div>
+
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-6">
+          We are a full-service
+          advertising and
+          event management agency
+          based in Lalitpur.
+        </h1>
+
+        <p className="text-lg sm:text-xl text-white/80 max-w-2xl mb-10">
+          We Make Your Brand Unforgettable!
+        </p>
+
+      
       </div>
     </section>
   );
