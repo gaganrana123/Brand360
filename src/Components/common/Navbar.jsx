@@ -11,11 +11,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 20) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
+      setScrolled(window.scrollY > 20);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -33,10 +29,7 @@ export default function Navbar() {
     e.preventDefault();
     setIsOpen(false);
     if (location.pathname === "/") {
-      const footer = document.getElementById("footer");
-      if (footer) {
-        footer.scrollIntoView({ behavior: "smooth" });
-      }
+      document.getElementById("footer")?.scrollIntoView({ behavior: "smooth" });
     } else {
       navigate("/#footer");
     }
@@ -46,36 +39,30 @@ export default function Navbar() {
     e.preventDefault();
     setIsOpen(false);
     if (location.pathname === "/") {
-      const clienteleContainer = document.getElementById("clientlogos");
-      if (clienteleContainer) {
-        clienteleContainer.scrollIntoView({ behavior: "smooth" });
-      }
+      document.getElementById("clientlogos")?.scrollIntoView({ behavior: "smooth" });
     } else {
       navigate("/#clientlogos");
     }
   };
 
-  const scrollToFooter = () => {
-    const footer = document.getElementById("footer");
-    if (footer) {
-      footer.scrollIntoView({ behavior: "smooth" });
+  // NEW FUNCTION: Scroll to top of page when navigating
+  const handlePageNavigation = (e, href) => {
+    e.preventDefault();
+    setIsOpen(false);
+    
+    if (location.pathname === href) {
+      // Already on the page, just scroll to top
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      // Navigate to new page and scroll to top after load
+      navigate(href);
     }
   };
 
-  const scrollToClientele = () => {
-    const clienteleContainer = document.getElementById("clientlogos");
-    if (clienteleContainer) {
-      clienteleContainer.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
+  // Scroll to top after page navigation
   useEffect(() => {
-    if (location.hash === "#footer") {
-      setTimeout(scrollToFooter, 50);
-    } else if (location.hash === "#clientlogos") {
-      setTimeout(scrollToClientele, 50);
-    }
-  }, [location.hash]);
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
 
   useEffect(() => {
     setIsOpen(false);
@@ -83,9 +70,9 @@ export default function Navbar() {
 
   return (
     <>
-      {/* 🔵 Sticky Wrapper for Info Bar + Navbar */}
+      {/* Sticky Wrapper for Info Bar + Navbar */}
       <div className="sticky top-0 z-50">
-        {/* 🔵 Top Info Bar */}
+        {/* Top Info Bar */}
         <div className="bg-primary text-white text-sm py-2 px-4 flex flex-col lg:flex-row justify-between items-center gap-2">
           <div className="flex items-center space-x-2">
             <span className="inline-block w-4 h-4 rounded-full bg-cyan-100"></span>
@@ -106,13 +93,14 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* 🧭 Navbar */}
+        {/* Navbar */}
         <nav className={`bg-white transition-all ${scrolled ? "py-3 shadow-md" : "py-4"}`}>
           <div className="container mx-auto px-4 lg:px-8">
             <div className="flex justify-between items-center">
               <Link
                 to="/"
                 className="font-bold text-xl hover:scale-105 transition-all duration-300 ease-out"
+                onClick={(e) => handlePageNavigation(e, "/")}
               >
                 <img
                   src="/bluelogo.png"
@@ -142,6 +130,7 @@ export default function Navbar() {
                           key={index}
                           to={item.href}
                           className="relative px-4 py-2 text-black transition-all duration-300 group"
+                          onClick={(e) => handlePageNavigation(e, item.href)}
                         >
                           {item.name}
                           <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-400 to-pink-400 group-hover:w-full transition-all duration-300"></span>
@@ -174,7 +163,7 @@ export default function Navbar() {
         </nav>
       </div>
 
-      {/* 📱 Mobile Sidebar */}
+      {/* Mobile Sidebar */}
       <div
         className={`lg:hidden fixed inset-0 z-50 transition-all duration-300 ${
           isOpen ? "visible" : "invisible"
@@ -217,7 +206,7 @@ export default function Navbar() {
                     key={index}
                     to={item.href}
                     className="block px-4 py-3 rounded-xl text-black relative group hover:bg-gray-50 transition-colors"
-                    onClick={() => setIsOpen(false)}
+                    onClick={(e) => handlePageNavigation(e, item.href)}
                   >
                     {item.name}
                     <span className="absolute left-4 bottom-2 w-0 h-0.5 bg-gradient-to-r from-purple-400 to-pink-400 group-hover:w-3/4 transition-all duration-300"></span>
