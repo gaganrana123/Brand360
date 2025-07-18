@@ -1,101 +1,87 @@
-import React, { useState } from "react";
+import { Megaphone, Calendar, Lightbulb, Smartphone, Wrench, BarChart3, ArrowRight } from "lucide-react"
 
 const services = [
   {
+    title: "Advertising & Creative Services",
+    description:
+      "We craft compelling campaigns and creatives that resonate with your audience across all platforms – TV, print, digital, and outdoor.",
+    icon: Megaphone,
+  },
+  {
+    title: "Event Management",
+    description:
+      "From corporate events to brand activations, concerts to conferences – we handle everything from conceptualization to flawless on-ground execution.",
+    icon: Calendar,
+  },
+  {
+    title: "Brand Strategy & Identity",
+    description:
+      "We build brands from the ground up – naming, logo design, brand voice, positioning, and visual identity that make your brand stand out.",
+    icon: Lightbulb,
+  },
+  {
     title: "Digital Marketing",
     description:
-      "Boost your brand with expert digital marketing services—SEO, social media, PPC, content & more. Tailored strategies that drive traffic, leads & sales.",
-    image: "/DigitalMarketing.jpeg",
+      "Social media strategy, content creation, paid campaigns, influencer marketing – we help brands stay relevant and impactful in the digital age.",
+    icon: Smartphone,
   },
   {
-    title: "ATL",
+    title: "Production & Fabrication",
     description:
-      "Maximize reach with impactful ATL strategies. TV, radio & print ads tailored to elevate your brand and connect with mass audiences.",
-    image: "/ATL.jpeg",
+      "Stunning stage setups, exhibition stalls, and promotional materials – we ensure every touchpoint looks professional and on-brand.",
+    icon: Wrench,
   },
   {
-    title: "OOH",
+    title: "Media Planning & Buying",
     description:
-      "Boost visibility with strategic OOH ads—billboards, transit, and more. We design and place outdoor campaigns that captivate and convert on the move.",
-    image: "/OOH.jpg",
+      "Maximize your reach and return with our strategic media placement across traditional and digital channels.",
+    icon: BarChart3,
   },
-  {
-    title: "Media Buying",
-    description:
-      "Maximize ROI with smart media buying. We plan and negotiate ad placements across TV, radio, digital, print & OOH for maximum reach and impact.",
-    image: "/MediaBuying.jpeg",
-  },
-];
+]
 
 export default function WhatWeDo() {
-  const [activeIndex, setActiveIndex] = useState(0);
-
   return (
-    <div
-      id="services"
-      className=" bg-primary text-white py-16 px-4 sm:px-6 lg:px-8"
-    >
+    <div id="services" className="bg-white py-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-4xl sm:text-4xl font-extrabold">WHAT WE DO</h2>
-          <div className=" w-60 h-1 bg-cyan-500 mx-auto mb-4"></div>
-
-          <p className="text-cyan-300 mt-2 text-lg sm:text-xl md:text-2xl">
-            Services
-          </p>
+        <div className="text-center mb-2">
+          <h2 className="text-3xl sm:text-3xl font-extrabold text-gray-900">WHAT WE DO</h2>
+          <div className=" w-40 h-1 bg-cyan-500 mx-auto mb-4"></div>
+          <p className="text-cyan-500 mt-2 text-lg sm:text-xl md:text-2xl">Services</p>
+          <div className="mt-6 max-w-4xl mx-auto">
+            <p className="text-gray-700 text-base leading-relaxed">
+              At Brand Three Sixty Pvt. Ltd., we offer a 360-degree approach to branding, marketing, and event
+              experiences. Our services are tailored to meet your brand's unique goals — from idea to execution.
+            </p>
+          </div>
         </div>
 
-        {/* Main Layout */}
-        <div className="flex flex-col-reverse lg:flex-row gap-10 items-center">
-          {/* Left: Service List */}
-          <div className="w-full lg:w-1/2 space-y-4">
-            {services.map((service, index) => (
-              <div key={index}>
-                <div
-                  className={`cursor-pointer px-6 py-5 rounded-3xl transition-all duration-300 border border-white/10 hover:border-white backdrop-blur-md ${
-                    index === activeIndex
-                      ? "bg-white text-black shadow-lg"
-                      : "hover:bg-white/10"
-                  }`}
-                  onClick={() => setActiveIndex(index)}
-                >
-                  <div className="flex flex-col">
-                    <span className="text-base sm:text-lg font-semibold">
-                      {service.title}
-                    </span>
-                    {index === activeIndex && (
-                      <p className="mt-2 text-sm sm:text-base text-black/80">
-                        {service.description}
-                      </p>
-                    )}
+        {/* Services Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {services.map((service, index) => {
+            const IconComponent = service.icon
+            return (
+              <div key={index} className="bg-white p-8 rounded-lg">
+                <div className="flex items-start space-x-1">
+                  {/* Icon */}
+                  <div className="flex-shrink-0">
+                    <div className="w-16 h-16 bg-cyan-100 rounded-lg flex items-center justify-center">
+                      <IconComponent className="w-8 h-8 text-cyan-500" />
+                    </div>
+                  </div>
+
+                  {/* Content */}
+                  <div className="flex-1">
+                    <h3 className="text-lg font-bold text-gray-900 mb-3 leading-tight">{service.title}</h3>
+                    <p className="text-gray-600 text-l leading-relaxed mb-4">{service.description}</p>
+                   
                   </div>
                 </div>
-
-                {/* Mobile Image - Only shown below active item on mobile */}
-                {index === activeIndex && (
-                  <div className="lg:hidden mt-4 flex justify-center">
-                    <img
-                      src={service.image}
-                      alt={service.title}
-                      className="w-full max-w-xs sm:max-w-md rounded-full shadow-2xl object-cover transition duration-500 ease-in-out"
-                    />
-                  </div>
-                )}
               </div>
-            ))}
-          </div>
-
-          {/* Right: Image Preview (Desktop only) */}
-          <div className="hidden lg:flex w-full lg:w-1/2 justify-center">
-            <img
-              src={services[activeIndex].image}
-              alt={services[activeIndex].title}
-              className="w-full max-w-xs sm:max-w-md lg:max-w-lg rounded-3xl shadow-2xl object-cover transition duration-500 ease-in-out"
-            />
-          </div>
+            )
+          })}
         </div>
       </div>
     </div>
-  );
+  )
 }

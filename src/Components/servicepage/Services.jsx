@@ -72,7 +72,7 @@ const ServicePage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-blue-800 to-indigo-900 text-white py-20">
+      <section className="relative bg-primary text-white py-20">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-4">Creative Media Solutions</h1>
           <p className="text-xl md:text-2xl max-w-3xl mx-auto mb-8">
@@ -117,45 +117,9 @@ const ServicePage = () => {
         </div>
       </section>
 
-      {/* Process Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Our Process</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              A structured approach to ensure your project's success from concept to completion
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            {[
-              {step: 1, title: "Discover", description: "We dive deep to understand your goals and audience"},
-              {step: 2, title: "Strategize", description: "We develop a customized plan to achieve your objectives"},
-              {step: 3, title: "Create", description: "Our creative team brings your vision to life"},
-              {step: 4, title: "Launch", description: "We deploy and optimize for maximum impact"}
-            ].map((item) => (
-              <div key={item.step} className="bg-white p-8 rounded-xl shadow-md text-center hover:shadow-lg transition-shadow">
-                <div className="w-16 h-16 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center text-2xl font-bold mx-auto mb-4">
-                  {item.step}
-                </div>
-                <h3 className="text-xl font-bold text-gray-800 mb-2">{item.title}</h3>
-                <p className="text-gray-600">{item.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+     
 
-      {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-blue-600 to-indigo-700 text-white">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Transform Your Brand?</h2>
-          <p className="text-xl max-w-2xl mx-auto mb-8">
-            Let's collaborate to create something extraordinary together.
-          </p>
-         
-        </div>
-      </section>
+
     </div>
   );
 };
