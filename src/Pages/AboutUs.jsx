@@ -123,7 +123,7 @@ export default function AboutUs() {
               <div >
                 <div className="overflow-hidden rounded-2xl">
                   <img
-                    src="/p5.png" // Replace with your actual image path
+                    src="/about.png" // Replace with your actual image path
                     alt="Descriptive Alt Text"
                     className="transition-transform duration-300 ease-in-out hover:scale-105 w-full object-cover rounded-2xl"
                   />
