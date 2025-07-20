@@ -5,9 +5,9 @@ export default function Footer() {
 
   return (
     <footer id="footer" className="bg-gray-900 text-gray-300 py-10 px-4">
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-x-16 gap-y-10 text-center md:text-left">
+      <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-x-16 gap-y-10 text-center place-items-center">
         {/* Company Info */}
-        <div className="flex flex-col items-center md:items-start">
+        <div className="flex flex-col items-center">
           <h3 className="text-xl font-semibold text-white mb-4">
             Brand Three Sixty Pvt. Ltd.
           </h3>
@@ -16,7 +16,7 @@ export default function Footer() {
             href={googleMapsUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="mb-2 flex items-center hover:text-blue-400 transition-colors duration-300"
+            className="mb-2 flex items-center justify-center hover:text-blue-400 transition-colors duration-300"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -39,7 +39,7 @@ export default function Footer() {
         </div>
 
         {/* Contact Info */}
-        <div className="flex flex-col items-center md:items-start">
+        <div className="flex flex-col items-center">
           <h3 className="text-xl font-semibold text-white mb-4">
             Get in Touch
           </h3>
@@ -57,7 +57,7 @@ export default function Footer() {
 
           <a
             href="mailto:brand360pvtltd@gmail.com"
-            className="hover:text-blue-400 transition-colors duration-300 flex items-center"
+            className="hover:text-blue-400 transition-colors duration-300 flex items-center justify-center"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -73,7 +73,7 @@ export default function Footer() {
         </div>
 
         {/* Social Media */}
-        <div className="flex flex-col items-center md:items-start">
+        <div className="flex flex-col items-center">
           <h3 className="text-xl font-semibold text-white mb-4">
             Connect With Us
           </h3>
@@ -83,7 +83,7 @@ export default function Footer() {
             href="https://www.instagram.com/brandthreesixty_np/"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-blue-400 transition-colors duration-300 flex items-center mb-3"
+            className="hover:text-blue-400 transition-colors duration-300 flex items-center justify-center mb-3"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -118,7 +118,7 @@ export default function Footer() {
             href="https://www.facebook.com/brandthreesixty.np"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-blue-400 transition-colors duration-300 flex items-center mb-3"
+            className="hover:text-blue-400 transition-colors duration-300 flex items-center justify-center mb-3"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -136,7 +136,7 @@ export default function Footer() {
             href="https://www.linkedin.com/company/brand-three-sixty-pvt-ltd/"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-blue-400 transition-colors duration-300 flex items-center"
+            className="hover:text-blue-400 transition-colors duration-300 flex items-center justify-center"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
