@@ -1,125 +1,135 @@
 import React, { useState } from 'react';
-import ServiceCard from './ServiceCard';
+import {
+  FaBullhorn,
+  FaCalendarAlt,
+  FaLightbulb,
+  FaChartLine,
+  FaTools,
+  FaTv,
+} from 'react-icons/fa';
+
+const coreServices = [
+  {
+    icon: <FaBullhorn className="text-blue-600 text-3xl" />,
+    title: "Advertising & Creative Services",
+    description:
+      "We craft impactful campaigns that connect with audiences across TV, print, digital, and outdoor platforms.",
+    details:
+      "From concept development to final execution, our team creates advertisements that not only capture attention but also inspire action. We specialize in storytelling, scriptwriting, visual design, and integrated campaign planning to ensure a cohesive brand message across every channel.",
+  },
+  {
+    icon: <FaCalendarAlt className="text-blue-600 text-3xl" />,
+    title: "Event Management",
+    description:
+      "We plan and execute corporate events, activations, concerts, and conferences with precision.",
+    details:
+      "Our end-to-end event management covers everything from budgeting and ideation to stage design, artist coordination, and logistics. We turn your vision into an experience—memorable, seamless, and on-brand for your audience.",
+  },
+  {
+    icon: <FaLightbulb className="text-blue-600 text-3xl" />,
+    title: "Brand Strategy & Identity",
+    description:
+      "Crafting your brand’s unique identity through research, design, and positioning.",
+    details:
+      "We dive deep into market research and competitor analysis to create a compelling brand strategy. Our services include logo design, brand voice creation, tone guidelines, and identity systems that ensure your brand remains consistent and memorable.",
+  },
+  {
+    icon: <FaChartLine className="text-blue-600 text-3xl" />,
+    title: "Digital Marketing",
+    description:
+      "Enhance your online presence with social media, SEO, paid ads, and influencer outreach.",
+    details:
+      "Our digital marketing strategies are results-driven and customized to your brand goals. We focus on increasing engagement, conversions, and brand loyalty through content creation, campaign management, community building, analytics, and trend-aware tactics.",
+  },
+  {
+    icon: <FaTools className="text-blue-600 text-3xl" />,
+    title: "Production & Fabrication",
+    description:
+      "We build exhibition booths, stage sets, promotional items, and branded assets that stand out.",
+    details:
+      "From large-scale installations to custom signage, we turn design into reality. Our production services include fabrication for events, expos, store branding, pop-up shops, and more—ensuring your brand is represented beautifully in the physical world.",
+  },
+  {
+    icon: <FaTv className="text-blue-600 text-3xl" />,
+    title: "Media Planning & Buying",
+    description:
+      "Strategic ad placements across digital, TV, print, and outdoor platforms to maximize ROI.",
+    details:
+      "Our media experts analyze your audience behavior and media trends to place your ads where they matter most. We negotiate the best rates, optimize timing, and ensure cross-platform consistency for high-impact reach and engagement.",
+  },
+];
 
 const ServicePage = () => {
-  const [activeTab, setActiveTab] = useState('all');
-  
-  const services = [
-    {
-      id: 1,
-      title: "Digital Marketing",
-      description: "Boost your brand with expert digital marketing services—SEO, social media, PPC, content & more. Tailored strategies that drive traffic, leads & sales.",
-      icon: "📱",
-      services: [
-        "Content Management Services",
-        "SEO Services",
-        "Facebook Advertising Services",
-        "PPC Advertising Services",
-        "Website Development Services",
-      ],
-      image: "/DigitalMarketing.jpeg", // Updated path
-      category: "marketing",
-    },
-    {
-      id: 2,
-      title: "Result-Driven ATL Services",
-      description: "Maximize reach with impactful ATL strategies. TV, radio & print ads tailored to elevate your brand and connect with mass audiences.",
-      icon: "📊",
-      services: [
-        "TVC Production Services",
-        "Creative Print Ad Services",
-        "360° Marketing Campaigns",
-        "Radio Advertising Services",
-        "Cinema Hall Advertising",
-      ],
-      image: "/ATL.jpeg", // Updated path
-      category: "production",
-    },
-    {
-      id: 3,
-      title: "OOH Advertising Services",
-      description: "Boost visibility with strategic OOH ads—billboards, transit, and more. We design and place outdoor campaigns that captivate and convert on the move.",
-      icon: "💡",
-      services: [
-        "Fabrication Services",
-        "In Shop Branding Services",
-        "Outdoor Branding Services",
-        "Event Management Services",
-      ],
-      image: "/OOH.jpg", // Updated path
-      category: "marketing",
-    },
-    {
-      id: 4,
-      title: "Media Buying Services",
-      description: "Maximize ROI with smart media buying. We plan and negotiate ad placements across TV, radio, digital, print & OOH for maximum reach and impact.",
-      icon: "🎥",
-      services: [
-        "Radio Advertising Services",
-        "Television Advertising Services",
-        "Creative Print Ad Services",
-        "Cinema Hall Advertising",
-      ],
-      image: "/MediaBuying.jpeg", // Updated path
-      category: "marketing",
-    },
-  ];
+  const [openIndex, setOpenIndex] = useState(null);
 
-  const filteredServices = activeTab === 'all' 
-    ? services 
-    : services.filter(service => service.category === activeTab);
+  const toggleService = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100">
-      {/* Hero Section */}
-      <section className="relative bg-primary text-white py-20">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">Creative Media Solutions</h1>
-          <p className="text-xl md:text-2xl max-w-3xl mx-auto mb-8">
-            We craft compelling digital experiences that connect brands with their audiences
+    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
+      <section className="relative bg-blue-900 text-white py-24 px-4 text-center overflow-hidden">
+        <div className="absolute inset-0 opacity-10 bg-[url('/grid.svg')] bg-cover" />
+        <div className="container mx-auto relative z-10">
+          <h1 className="text-5xl font-extrabold mb-6 animate-fadeInUp">What We Do</h1>
+          <p className="text-lg md:text-xl max-w-3xl mx-auto opacity-90 animate-fadeInUp delay-100">
+            At Brand Three Sixty Pvt. Ltd., we offer a 360° approach to branding, marketing, and events—tailored from idea to execution.
           </p>
+          <div className="mt-8 animate-fadeInUp delay-150">
+            <a href="#services" className="inline-block bg-white text-blue-900 px-6 py-3 rounded-full shadow hover:bg-gray-100 font-semibold transition-all">
+              Explore Services
+            </a>
+          </div>
         </div>
       </section>
 
-      {/* Services Section */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
+      <section id="services" className="py-24 px-4">
+        <div className="container mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Our Services</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              We offer a comprehensive suite of creative services to help your brand stand out in today's competitive landscape.
+            <h2 className="text-4xl font-bold text-gray-800 mb-4 animate-fadeInUp">Our Core Services</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto animate-fadeInUp delay-100">
+              Discover the range of services we offer, each designed to elevate your brand presence through creativity, strategy, and flawless execution.
             </p>
           </div>
 
-          {/* Service Tabs */}
-          <div className="flex flex-wrap justify-center gap-4 mb-12">
-            {['all', 'marketing', 'production'].map((tab) => (
-              <button
-                key={tab}
-                className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
-                  activeTab === tab
-                    ? 'bg-blue-600 text-white shadow-lg transform scale-105'
-                    : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-                }`}
-                onClick={() => setActiveTab(tab)}
+          <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+            {coreServices.map((service, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 animate-fadeInUp"
               >
-                {tab === 'all' ? 'All Services' : tab.charAt(0).toUpperCase() + tab.slice(1)}
-              </button>
-            ))}
-          </div>
+                <button
+                  onClick={() => toggleService(index)}
+                  className="flex flex-col items-center text-center w-full focus:outline-none"
+                >
+                  <div className="mb-4">{service.icon}</div>
+                  <h3 className="text-2xl font-semibold text-gray-800 mb-2">
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    {service.description}
+                  </p>
+                  <span className="mt-4 text-blue-600 text-sm font-medium">
+                    {openIndex === index ? 'Hide Details ▲' : 'Learn More ▼'}
+                  </span>
+                </button>
 
-          {/* Services Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-32 ">
-            {filteredServices.map(service => (
-              <ServiceCard key={service.id} service={service} />
+                <div
+                  className={`overflow-hidden transition-all duration-500 ease-in-out mt-4 text-left text-gray-700 text-sm leading-relaxed ${
+                    openIndex === index ? 'max-h-[300px]' : 'max-h-0'
+                  }`}
+                >
+                  <p className="pt-4 border-t border-gray-200">
+                    {service.details}
+                  </p>
+                </div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-     
-
-
+      
     </div>
   );
 };
