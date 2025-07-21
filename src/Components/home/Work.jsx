@@ -10,11 +10,9 @@ import "swiper/css/pagination";
 
 const portfolioItems = [
   { id: 1, image: "/sd1.jpg",  title: "SPA College Graduation Ceremony" },
-  { id: 2, image: "/o1.jpg",  title: "OMODA Waiting Fun" },
-  { id: 3, image: "/r1.jpg",  title: "Rai School Farewell" },
   { id: 4, image: "/s1.jpg", title: "Signing Ceremony" },
-  { id: 5, image: "/sc1.jpg",  title: "Shivam Udaan 2081" },
-  { id: 6, image: "/w1.jpg",  title: "wesionaryTEA"},
+  { id: 5, image: "/sc1.jpg",  title: "शिवम् कीर्ति समारोह–२०८१ “उडान" },
+  { id: 6, image: "/w1.jpg",  title: "wesionaryTEAM"},
   { id: 7, image: "/x1.jpg",  title: "Xavier Parents Gala" },
 ];
 
