@@ -9,13 +9,13 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 const portfolioItems = [
-  { id: 1, image: "/p1.jpg", link: "#" },
-  { id: 2, image: "/p2.jpg", link: "#" },
-  { id: 3, image: "/p3.jpg", link: "#" },
-  { id: 4, image: "/p4.jpg", link: "#" },
-  { id: 5, image: "/p5.png", link: "#" },
-  { id: 6, image: "/p6.png", link: "#" },
-  { id: 7, image: "/p7.png", link: "#" },
+  { id: 1, image: "/sd1.jpg",  title: "SPA College Graduation Ceremony" },
+  { id: 2, image: "/o1.jpg",  title: "OMODA Waiting Fun" },
+  { id: 3, image: "/r1.jpg",  title: "Rai School Farewell" },
+  { id: 4, image: "/s1.jpg", title: "Signing Ceremony" },
+  { id: 5, image: "/sc1.jpg",  title: "Shivam Udaan 2081" },
+  { id: 6, image: "/w1.jpg",  title: "wesionaryTEA"},
+  { id: 7, image: "/x1.jpg",  title: "Xavier Parents Gala" },
 ];
 
 export default function OurWork() {
@@ -90,6 +90,9 @@ export default function OurWork() {
                       />
                     </div>
                   </a>
+                  <div className="p-4 text-center">
+                    <h3 className="text-base font-semibold text-gray-800">{item.title}</h3>
+                  </div>
                 </div>
               </SwiperSlide>
             ))}
@@ -111,9 +114,8 @@ export default function OurWork() {
             <ChevronRight className="w-5 h-5 text-gray-700 group-hover:text-cyan-600" />
           </button>
 
-          <div className="text-center text-gray-600">
-            <span className="font-semibold text-gray-900">{activeIndex + 1}</span> /{" "}
-            {portfolioItems.length}
+          <div className="text-center text-gray-600 mt-2">
+            <span className="font-semibold text-gray-900">{activeIndex + 1}</span> / {portfolioItems.length}
           </div>
         </div>
       </div>

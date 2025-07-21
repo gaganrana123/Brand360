@@ -72,18 +72,13 @@ const ServicePage = () => {
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
       
       {/* Hero Section */}
-      <section className="relative bg-primary text-white py-24 px-4 text-center overflow-hidden">
+      <section className="relative bg-primary text-white py-4 px-4 text-center overflow-hidden">
         <div className="absolute inset-0 opacity-10 bg-[url('/grid.svg')] bg-cover" />
         <div className="container mx-auto relative z-10">
           <h1 className="text-5xl font-extrabold mb-6">What We Do</h1>
           <p className="text-lg md:text-xl max-w-3xl mx-auto">
             At Brand Three Sixty Pvt. Ltd., we offer a 360° approach to branding, marketing, and events—tailored from idea to execution.
           </p>
-          <div className="mt-8">
-            <a href="#services" className="inline-block bg-white text-primary px-6 py-3 rounded-full shadow hover:bg-gray-100 font-semibold transition-all">
-              Explore Services
-            </a>
-          </div>
         </div>
       </section>
 
