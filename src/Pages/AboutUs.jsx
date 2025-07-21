@@ -137,13 +137,14 @@ export default function AboutUs() {
 <section className="relative px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
   <div className="flex flex-row min-h-[70vh] w-[200%] lg:w-full">
     {/* Left Section - Photo */}
-    <div className="  relative flex-1">
-      <img
-        src="/p5.png" // Replace with your image path
-        alt="Our Mission & Vision"
-       className=" w-full object-cover rounded-2xl"
-      />
-    </div>
+   <div className="relative flex-1 flex items-center justify-center">
+  <img
+    src="/mission.png" // Use a background-removed PNG
+    alt="Our Mission & Vision"
+    className="w-3/4 transition-transform duration-300 ease-in-out transform hover:scale-105 hover"
+  />
+</div>
+
 
     {/* Right Section - Mission & Vision */}
     <div className="w-full flex-shrink-0 p-8 lg:p-12 bg-gray-50 flex-1">
