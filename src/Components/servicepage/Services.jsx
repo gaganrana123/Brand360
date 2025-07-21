@@ -13,47 +13,47 @@ const coreServices = [
     icon: <FaBullhorn className="text-blue-600 text-3xl" />,
     title: "Advertising & Creative Services",
     description:
-      "We craft impactful campaigns that connect with audiences across TV, print, digital, and outdoor platforms.",
+      " We craft compelling campaigns and creatives that resonate with your audience across all platforms – TV, print, digital, and outdoor.",
     details:
-      "From concept development to final execution, our team creates advertisements that not only capture attention but also inspire action. We specialize in storytelling, scriptwriting, visual design, and integrated campaign planning to ensure a cohesive brand message across every channel.",
+      "We craft compelling campaigns and creatives that truly resonate with your audience across all platforms. Whether it's TV, print, digital, or outdoor, we ensure your message is impactful and effectively reaches your target audience wherever they are.",
   },
   {
     icon: <FaCalendarAlt className="text-blue-600 text-3xl" />,
     title: "Event Management",
     description:
-      "We plan and execute corporate events, activations, concerts, and conferences with precision.",
+      "From corporate events to brand activations, concerts to conferences – we handle everything from conceptualization to flawless on-ground execution.",
     details:
-      "Our end-to-end event management covers everything from budgeting and ideation to stage design, artist coordination, and logistics. We turn your vision into an experience—memorable, seamless, and on-brand for your audience.",
+      "From corporate events to brand activations, concerts to conferences, we handle everything. We manage your event seamlessly, from initial conceptualization through to flawless on-ground execution, ensuring a successful experience.",
   },
   {
     icon: <FaLightbulb className="text-blue-600 text-3xl" />,
     title: "Brand Strategy & Identity",
     description:
-      "Crafting your brand’s unique identity through research, design, and positioning.",
+      "We build brands from the ground up – naming, logo design, brand voice, positioning, and visual identity that make your brand stand out.",
     details:
-      "We dive deep into market research and competitor analysis to create a compelling brand strategy. Our services include logo design, brand voice creation, tone guidelines, and identity systems that ensure your brand remains consistent and memorable.",
+      "We build brands from the ground up, covering naming, logo design, brand voice, positioning, and visual identity to ensure your brand truly stands out.",
   },
   {
     icon: <FaChartLine className="text-blue-600 text-3xl" />,
     title: "Digital Marketing",
     description:
-      "Enhance your online presence with social media, SEO, paid ads, and influencer outreach.",
+      "Social media strategy, content creation, paid campaigns, influencer marketing – we help brands stay relevant and impactful in the digital age.",
     details:
-      "Our digital marketing strategies are results-driven and customized to your brand goals. We focus on increasing engagement, conversions, and brand loyalty through content creation, campaign management, community building, analytics, and trend-aware tactics.",
+      "We help brands thrive in the digital age through comprehensive social media strategy, engaging content creation, targeted paid campaigns, and effective influencer marketing, ensuring your brand remains both relevant and impactful.",
   },
   {
     icon: <FaTools className="text-blue-600 text-3xl" />,
     title: "Production & Fabrication",
     description:
-      "We build exhibition booths, stage sets, promotional items, and branded assets that stand out.",
+      "Stunning stage setups, exhibition stalls, and promotional materials – we ensure every touchpoint looks professional and on-brand.",
     details:
-      "From large-scale installations to custom signage, we turn design into reality. Our production services include fabrication for events, expos, store branding, pop-up shops, and more—ensuring your brand is represented beautifully in the physical world.",
+      "We create stunning stage setups, impactful exhibition stalls, and compelling promotional materials, ensuring every visual touchpoint is professional and perfectly aligns with your brand.",
   },
   {
     icon: <FaTv className="text-blue-600 text-3xl" />,
     title: "Media Planning & Buying",
     description:
-      "Strategic ad placements across digital, TV, print, and outdoor platforms to maximize ROI.",
+      "Maximize your reach and return with our strategic media placement across traditional and digital channels.",
     details:
       "Our media experts analyze your audience behavior and media trends to place your ads where they matter most. We negotiate the best rates, optimize timing, and ensure cross-platform consistency for high-impact reach and engagement.",
   },
@@ -73,7 +73,7 @@ const ServicePage = () => {
         <div className="container mx-auto relative z-10">
           <h1 className="text-5xl font-extrabold mb-6 animate-fadeInUp">What We Do</h1>
           <p className="text-lg md:text-xl max-w-3xl mx-auto opacity-90 animate-fadeInUp delay-100">
-            At Brand Three Sixty Pvt. Ltd., we offer a 360° approach to branding, marketing, and events—tailored from idea to execution.
+            At Brand Three Sixty Pvt. Ltd., we offer a 360-degree approach to branding, marketing, and event experiences. Our services are tailored to meet your brand’s unique goals — from idea to execution.
           </p>
           <div className="mt-8 animate-fadeInUp delay-150">
             <a href="#services" className="inline-block bg-white text-blue-900 px-6 py-3 rounded-full shadow hover:bg-gray-100 font-semibold transition-all">
@@ -86,7 +86,7 @@ const ServicePage = () => {
       <section id="services" className="py-24 px-4">
         <div className="container mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-800 mb-4 animate-fadeInUp">Our Core Services</h2>
+            <h2 className="text-4xl font-bold text-gray-800 mb-4 animate-fadeInUp">Our Services</h2>
             <p className="text-gray-600 max-w-2xl mx-auto animate-fadeInUp delay-100">
               Discover the range of services we offer, each designed to elevate your brand presence through creativity, strategy, and flawless execution.
             </p>
