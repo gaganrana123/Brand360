@@ -64,7 +64,7 @@ export default function AboutUs() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 text-black">
       {/* Hero Section */}
-      <section className="relative bg-primary text-white py-20">
+      <section className="relative bg-primary text-white py-2">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-4">
             <h1 className="text-4xl sm:text-4xl lg:text-4xl font-bold mb-6">
@@ -83,7 +83,7 @@ export default function AboutUs() {
       </section>
 
       {/* About Section */}
-      <div className="relative px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
+      <div className="relative px-4 sm:px-6 lg:px-8 py-6 lg:py-10">
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
@@ -123,7 +123,7 @@ export default function AboutUs() {
               <div >
                 <div className="overflow-hidden rounded-2xl">
                   <img
-                    src="/p5.png" // Replace with your actual image path
+                    src="/about.png" // Replace with your actual image path
                     alt="Descriptive Alt Text"
                     className="transition-transform duration-300 ease-in-out hover:scale-105 w-full object-cover rounded-2xl"
                   />

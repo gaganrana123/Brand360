@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ServiceCard from './ServiceCard';
 import {
   FaBullhorn,
   FaCalendarAlt,
@@ -62,74 +63,60 @@ const coreServices = [
 const ServicePage = () => {
   const [openIndex, setOpenIndex] = useState(null);
 
+
   const toggleService = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
-      <section className="relative bg-blue-900 text-white py-24 px-4 text-center overflow-hidden">
+      
+      {/* Hero Section */}
+      <section className="relative bg-primary text-white py-4 px-4 text-center overflow-hidden">
         <div className="absolute inset-0 opacity-10 bg-[url('/grid.svg')] bg-cover" />
         <div className="container mx-auto relative z-10">
-          <h1 className="text-5xl font-extrabold mb-6 animate-fadeInUp">What We Do</h1>
-          <p className="text-lg md:text-xl max-w-3xl mx-auto opacity-90 animate-fadeInUp delay-100">
-            At Brand Three Sixty Pvt. Ltd., we offer a 360-degree approach to branding, marketing, and event experiences. Our services are tailored to meet your brand’s unique goals — from idea to execution.
+
+          <h1 className="text-5xl font-extrabold mb-6">What We Do</h1>
+          <p className="text-lg md:text-xl max-w-3xl mx-auto">
+            At Brand Three Sixty Pvt. Ltd., we offer a 360° approach to branding, marketing, and events—tailored from idea to execution.
+
           </p>
-          <div className="mt-8 animate-fadeInUp delay-150">
-            <a href="#services" className="inline-block bg-white text-blue-900 px-6 py-3 rounded-full shadow hover:bg-gray-100 font-semibold transition-all">
-              Explore Services
-            </a>
-          </div>
         </div>
       </section>
 
-      <section id="services" className="py-24 px-4">
+      {/* Core Services */}
+      <section className="py-24 px-4">
         <div className="container mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-800 mb-4 animate-fadeInUp">Our Services</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto animate-fadeInUp delay-100">
+
+            <h2 className="text-4xl font-bold text-gray-800 mb-4">Our Core Services</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+
               Discover the range of services we offer, each designed to elevate your brand presence through creativity, strategy, and flawless execution.
             </p>
           </div>
 
           <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
             {coreServices.map((service, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 animate-fadeInUp"
-              >
-                <button
-                  onClick={() => toggleService(index)}
-                  className="flex flex-col items-center text-center w-full focus:outline-none"
-                >
+              <div key={index} className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+                <button onClick={() => toggleService(index)} className="flex flex-col items-center text-center w-full focus:outline-none">
                   <div className="mb-4">{service.icon}</div>
-                  <h3 className="text-2xl font-semibold text-gray-800 mb-2">
-                    {service.title}
-                  </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">
-                    {service.description}
-                  </p>
+                  <h3 className="text-2xl font-semibold text-gray-800 mb-2">{service.title}</h3>
+                  <p className="text-gray-600 text-sm">{service.description}</p>
                   <span className="mt-4 text-blue-600 text-sm font-medium">
                     {openIndex === index ? 'Hide Details ▲' : 'Learn More ▼'}
                   </span>
                 </button>
-
-                <div
-                  className={`overflow-hidden transition-all duration-500 ease-in-out mt-4 text-left text-gray-700 text-sm leading-relaxed ${
-                    openIndex === index ? 'max-h-[300px]' : 'max-h-0'
-                  }`}
-                >
-                  <p className="pt-4 border-t border-gray-200">
-                    {service.details}
-                  </p>
+                <div className={`overflow-hidden transition-all duration-500 ease-in-out mt-4 text-left text-gray-700 text-sm leading-relaxed ${
+                  openIndex === index ? 'max-h-[300px]' : 'max-h-0'
+                }`}>
+                  <p className="pt-4 border-t border-gray-200">{service.details}</p>
                 </div>
               </div>
             ))}
           </div>
         </div>
       </section>
-
-      
     </div>
   );
 };

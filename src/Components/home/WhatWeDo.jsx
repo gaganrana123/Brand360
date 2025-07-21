@@ -65,8 +65,8 @@ export default function WhatWeDo() {
                 <div className="flex items-start space-x-1">
                   {/* Icon */}
                   <div className="flex-shrink-0">
-                    <div className="w-16 h-16 bg-cyan-100 rounded-lg flex items-center justify-center">
-                      <IconComponent className="w-8 h-8 text-cyan-500" />
+                    <div className="w-16 h-16  rounded-lg flex items-center justify-center">
+                      <IconComponent className="w-8 h-8 text-blue-600" />
                     </div>
                   </div>
 
