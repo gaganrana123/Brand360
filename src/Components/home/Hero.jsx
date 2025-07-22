@@ -8,7 +8,7 @@ export default function Hero() {
         <img
           src="/cover.png"
           alt="Background"
-          className="w-full h-full object-cover blur-sm object-top brightness-75"
+          className="w-full h-full object-cover object-top brightness-75"
         />
         
       </div>
@@ -20,18 +20,6 @@ export default function Hero() {
           Brand Three Sixty Pvt. Ltd.
         </div>
 
-        <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-6">
-          We are a full-service
-          advertising and
-          event management agency
-          based in Lalitpur.
-        </h1>
-
-        <p className="text-lg sm:text-xl text-white/80 max-w-2xl mb-10">
-          We Make Your Brand Unforgettable!
-        </p>
-
-      
       </div>
       </section>
     </section>
