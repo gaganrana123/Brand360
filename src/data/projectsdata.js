@@ -15,7 +15,7 @@ Event Managed by: Brand Three Sixty Pvt. Ltd.`,
     description: "A vibrant celebration marking 4 years of wesionaryTEAM.",
     images: ["/w1.jpg", "/w2.jpg", "/w3.jpg"],
   },
- 
+
   {
     src: "/rb1.jpg",
     title: "Red Bull - Spot the Vehicle Campaign all over Nepal",
@@ -40,7 +40,8 @@ We Make Your Brand Unforgettable !`,
     src: "/xg1.jpg",
     title: "Xavier Graduation Ceremony 2024",
     slug: "xavier-graduation-2024",
-    description: "Xavier International College – Hats off to the Class of 2024! ✨",
+    description:
+      "Xavier International College – Hats off to the Class of 2024! ✨",
     images: ["/xg1.jpg", "/xg2.jpg", "/xg3.jpg"],
   },
   {
@@ -75,7 +76,7 @@ M: +977 9843008833
     src: "/mn1.jpg",
     title: "Miss Universe Nepal 2024",
     slug: "miss-universe-nepal-2024",
-    description:`An evening of grace, glamour, and grandeur! 
+    description: `An evening of grace, glamour, and grandeur! 
     🌟 The Miss Universe Nepal 2024 Grand Finale was a stunning success, and we couldn’t be more proud of the results!
      Here’s to more iconic events! 
      ✨#MUN2024 #BrandThreeSixty #EventManagement`,
@@ -125,7 +126,7 @@ Explore the latest King Long EV vans, Nepal's top-selling models, and discover c
     src: "/nami1.jpg",
     title: "Nammi Stall",
     slug: "nammi",
-    description:  `Thank you so much MAW Vriddhi for trusting us. 
+    description: `Thank you so much MAW Vriddhi for trusting us. 
 Nammi, the big hatch with 5-star luxury awaits you at NADA AUTO SHOW 2024. 
 Stall No. A7. 🚗✨
 #Nammi #Dongfeng #MAWVriddhi #NadaAutoShow2024`,
@@ -163,7 +164,7 @@ Remember us for unforgettable activations and events !
     src: "/nagarik1.jpg",
     title: "नागरिक नायक 2082",
     slug: "nagarik-nayak-2082",
-    description:`Honoring Heroes, Inspiring Change — नागरिक नायक 2082 🌟
+    description: `Honoring Heroes, Inspiring Change — नागरिक नायक 2082 🌟
 A remarkable evening celebrating individuals whose actions have truly made a difference in our society.
 Event Managed by @brandthreesixty_np  
 #Nagariknayak2082 #Nepalrepublicmedia #Changingsociety #Brandthreesixty #Eventmanagementinnepal`,
@@ -173,11 +174,22 @@ Event Managed by @brandthreesixty_np
     src: "/creator1.jpg",
     title: "Creator’s Champion 2025",
     slug: "creators-champion-2025",
-    description:`Creator’s Champion- 2025 - ‘म नागरिक म बनाउछु नेपाल’ 
+    description: `Creator’s Champion- 2025 - ‘म नागरिक म बनाउछु नेपाल’ 
     – Shaping Economy & A Greener Tomorrow 
 Event Organized by Nepal Republic Media 
 Event Managed by @brandthreesixty_np 
 #creatorschampion2025 #Brandthreesixty #eventmanagementinnepal`,
     images: ["/creator1.jpg", "/creator2.jpg", "/creator3.jpg"],
   },
+  {
+    src: "/mng1.jpg",
+    title: "महानगर यातायातको विद्युतीय सेवा शुभारम्भ ",
+    slug: "mahanagr",
+    description: `महानगर यातायातको विद्युतीय सेवा शुभारम्भ 
+Event Organized by Mahanagar Yatayat Pvt Ltd 
+Event Managed by @brandthreesixty_np 
+#brandthreesixty  #eventmanagementinnepal #mahanagaryatayat  #sustainablenepal`,
+    images: ["/mng1.jpg", "/mng2.jpg", "/mng3.jpg"],
+  }
+  
 ];

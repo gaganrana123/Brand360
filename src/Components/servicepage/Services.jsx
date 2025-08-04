@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import ServiceCard from './ServiceCard';
+import React, { useState } from "react";
+import ServiceCard from "./ServiceCard";
 import {
   FaBullhorn,
   FaCalendarAlt,
@@ -7,7 +7,7 @@ import {
   FaChartLine,
   FaTools,
   FaTv,
-} from 'react-icons/fa';
+} from "react-icons/fa";
 
 const coreServices = [
   {
@@ -63,24 +63,46 @@ const coreServices = [
 const ServicePage = () => {
   const [openIndex, setOpenIndex] = useState(null);
 
-
   const toggleService = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
-      
-      {/* Hero Section */}
-      <section className="relative bg-primary text-white py-4 px-4 text-center overflow-hidden">
-        <div className="absolute inset-0 opacity-10 bg-[url('/grid.svg')] bg-cover" />
-        <div className="container mx-auto relative z-10">
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 text-black">
+      {/* Hero Content */}
+      <section className="relative min-h-[70vh] bg-white">
+        <div className="container mx-auto px-4 h-full">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[70vh] py-12 lg:py-0">
+            {/* Left Side - Text Content */}
+            <div className="space-y-6">
+              {/* Blue accent line */}
+              <div className="w-64 h-1 bg-primary"></div>
 
-          <h1 className="text-5xl font-extrabold mb-6">What We Do</h1>
-          <p className="text-lg md:text-xl max-w-3xl mx-auto">
-            At Brand Three Sixty Pvt. Ltd., we offer a 360° approach to branding, marketing, and events—tailored from idea to execution.
+              {/* Main heading matching the design */}
+              <div>
+                <h1 className="text-4xl md:text-4xl lg:text-4xl font-black leading-tight">
+                  <div className="text-primary">What We Do</div>
+                  <div className="text-black">
+                    {" "}
+                    At Brand Three Sixty Pvt. Ltd., we offer a 360° approach to
+                    branding, marketing, and events tailored from idea to
+                    execution.
+                  </div>
+                </h1>
+              </div>
+            </div>
 
-          </p>
+            {/* Right Side - Image */}
+            <div className="relative">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+                <img
+                  src="service.png"
+                  alt="Advertising and event management team collaboration"
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -88,29 +110,44 @@ const ServicePage = () => {
       <section className="py-24 px-4">
         <div className="container mx-auto">
           <div className="text-center mb-16">
-
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">Our Core Services</h2>
+            <h2 className="text-4xl font-bold text-gray-800 mb-4">
+              Our Core Services
+            </h2>
+            <div className=" w-80 h-1 bg-cyan-500 mx-auto mb-4"></div>
             <p className="text-gray-600 max-w-2xl mx-auto">
-
-              Discover the range of services we offer, each designed to elevate your brand presence through creativity, strategy, and flawless execution.
+              Discover the range of services we offer, each designed to elevate
+              your brand presence through creativity, strategy, and flawless
+              execution.
             </p>
           </div>
 
           <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
             {coreServices.map((service, index) => (
-              <div key={index} className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
-                <button onClick={() => toggleService(index)} className="flex flex-col items-center text-center w-full focus:outline-none">
+              <div
+                key={index}
+                className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
+              >
+                <button
+                  onClick={() => toggleService(index)}
+                  className="flex flex-col items-center text-center w-full focus:outline-none"
+                >
                   <div className="mb-4">{service.icon}</div>
-                  <h3 className="text-2xl font-semibold text-gray-800 mb-2">{service.title}</h3>
+                  <h3 className="text-2xl font-semibold text-gray-800 mb-2">
+                    {service.title}
+                  </h3>
                   <p className="text-gray-600 text-sm">{service.description}</p>
                   <span className="mt-4 text-blue-600 text-sm font-medium">
-                    {openIndex === index ? 'Hide Details ▲' : 'Learn More ▼'}
+                    {openIndex === index ? "Hide Details ▲" : "Learn More ▼"}
                   </span>
                 </button>
-                <div className={`overflow-hidden transition-all duration-500 ease-in-out mt-4 text-left text-gray-700 text-sm leading-relaxed ${
-                  openIndex === index ? 'max-h-[300px]' : 'max-h-0'
-                }`}>
-                  <p className="pt-4 border-t border-gray-200">{service.details}</p>
+                <div
+                  className={`overflow-hidden transition-all duration-500 ease-in-out mt-4 text-left text-gray-700 text-sm leading-relaxed ${
+                    openIndex === index ? "max-h-[300px]" : "max-h-0"
+                  }`}
+                >
+                  <p className="pt-4 border-t border-gray-200">
+                    {service.details}
+                  </p>
                 </div>
               </div>
             ))}

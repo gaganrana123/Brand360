@@ -38,7 +38,7 @@ const ClientLogos = () => {
       {/* Heading */}
       <div className="text-center mb-2">
         <h1 className="text-4xl sm:text-3xl font-extrabold text-gray-900">OUR TRUSTED PARTNER</h1>
-        <div className=" w-80 h-1 bg-cyan-500 mx-auto my-3"></div>
+        <div className=" w-96 h-1 bg-cyan-500 mx-auto my-3"></div>
       
       </div>
 
