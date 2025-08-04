@@ -46,7 +46,7 @@ export default function WhatWeDo() {
         {/* Header */}
         <div className="text-center mb-2">
           <h2 className="text-3xl sm:text-3xl font-extrabold text-gray-900">WHAT WE DO</h2>
-          <div className=" w-40 h-1 bg-cyan-500 mx-auto mb-4"></div>
+          <div className=" w-52 h-1 bg-cyan-500 mx-auto mb-4"></div>
           <p className="text-cyan-500 mt-2 text-lg sm:text-xl md:text-2xl">Services</p>
           <div className="mt-6 max-w-4xl mx-auto">
             <p className="text-gray-700 text-base leading-relaxed">

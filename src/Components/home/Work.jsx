@@ -38,7 +38,7 @@ export default function OurWork() {
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-4">
           <h2 className="text-3xl font-bold text-gray-900">Our Work</h2>
-          <div className="w-28 h-1 bg-cyan-500 mx-auto mb-4"></div>
+          <div className="w-36 h-1 bg-cyan-500 mx-auto mb-4"></div>
           <p className="text-black mt-2 text-l sm:text-l md:text-xl">Explore our latest projects and creative solutions</p>
         </div>
 
@@ -117,8 +117,7 @@ export default function OurWork() {
           </div>
         </div>
       </div>
-
-      <style jsx global>{`
+ <style jsx="true" global="true">{`
         .swiper-pagination {
           position: relative !important;
           margin-top: 1rem;
@@ -142,6 +141,7 @@ export default function OurWork() {
           background: #0891b2;
         }
       `}</style>
+
     </section>
   );
 }
