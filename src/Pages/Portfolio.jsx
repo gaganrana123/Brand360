@@ -3,7 +3,7 @@ import { projects } from "../data/projectsdata";
 
 const Portfolio = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 text-black">
+    <div className="min-h-fit bg-gradient-to-b from-gray-50 to-gray-100 text-black">
       {/* Hero Content */}
        <section className="relative min-h-[70vh] bg-white">
         <div className="container mx-auto px-4 h-full">
@@ -39,7 +39,7 @@ const Portfolio = () => {
       </section>
 
       {/* Project Cards */}
-       <section className="py-12 px-4 sm:px-6 lg:px-8">
+       <section className="py-20 px-4 sm:px-6 lg:px-8">
       {/* Section Title */}
       <div className="max-w-6xl mx-auto text-center mb-12">
       <h2 className="text-3xl font-bold text-gray-900">Our Work</h2>

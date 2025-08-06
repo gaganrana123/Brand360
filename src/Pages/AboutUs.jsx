@@ -61,7 +61,7 @@ export default function AboutUs() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 text-black">
+    <div className="min-h-fit bg-gradient-to-b from-gray-50 to-gray-100 text-black">
       {/* Hero Section with Split Layout */}
       <section className="relative min-h-[70vh] bg-white">
         <div className="container mx-auto px-4 h-full">
