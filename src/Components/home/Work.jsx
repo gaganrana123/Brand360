@@ -9,11 +9,21 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 const portfolioItems = [
-  { id: 1, image: "/sd1.jpg",  title: "SPA College Graduation Ceremony" },
-  { id: 4, image: "/s1.jpg", title: "Signing Ceremony" },
-  { id: 5, image: "/sc1.jpg",  title: "शिवम् कीर्ति समारोह–२०८१ “उडान" },
-  { id: 6, image: "/w1.jpg",  title: "wesionaryTEAM"},
-  { id: 7, image: "/x1.jpg",  title: "Xavier Parents Gala" },
+  { id: 1, image: "/sc1.jpg", title: "शिवम् कीर्ति समारोह–२०८१ “उडान”" },
+  { id: 2, image: "/xg1.jpg", title: "Xavier Graduation Ceremony 2024" },
+  { id: 3, image: "/ktm1.jpg", title: "KTM Dealer Convention 2024-2025" },
+  { id: 4, image: "/jp1.jpg", title: "Janaki Polychem Launch Event" },
+  { id: 5, image: "/deepal1.jpg", title: "Deepal Brand Launch in Pokhara" },
+  {
+    id: 6,
+    image: "/rb1.jpg",
+    title: "Red Bull - Spot the Vehicle Campaign all over Nepal",
+  },
+  { id: 7, image: "/jt1.jpg", title: "Jyoti Group Staff Meet 2024" },
+  { id: 8, image: "/Kwality1.jpg", title: "Kwality Ice Cream Launch" },
+  { id: 9, image: "/nagarik1.jpg", title: "नागरिक नायक 2082" },
+  { id: 10, image: "/honda1.jpg", title: "Honda Brand Activation" },
+  { id: 11, image: "/creator1.jpg", title: "Creator’s Champion 2025" },
 ];
 
 export default function OurWork() {
@@ -39,7 +49,9 @@ export default function OurWork() {
         <div className="text-center mb-4">
           <h2 className="text-3xl font-bold text-gray-900">Our Work</h2>
           <div className="w-36 h-1 bg-cyan-500 mx-auto mb-4"></div>
-          <p className="text-black mt-2 text-l sm:text-l md:text-xl">Explore our latest projects and creative solutions</p>
+          <p className="text-black mt-2 text-l sm:text-l md:text-xl">
+            Explore our latest projects and creative solutions
+          </p>
         </div>
 
         <div className="relative">
@@ -89,7 +101,9 @@ export default function OurWork() {
                     </div>
                   </a>
                   <div className="p-4 text-center">
-                    <h3 className="text-base font-semibold text-gray-800">{item.title}</h3>
+                    <h3 className="text-base font-semibold text-gray-800">
+                      {item.title}
+                    </h3>
                   </div>
                 </div>
               </SwiperSlide>
@@ -113,11 +127,14 @@ export default function OurWork() {
           </button>
 
           <div className="text-center text-gray-600 mt-2">
-            <span className="font-semibold text-gray-900">{activeIndex + 1}</span> / {portfolioItems.length}
+            <span className="font-semibold text-gray-900">
+              {activeIndex + 1}
+            </span>{" "}
+            / {portfolioItems.length}
           </div>
         </div>
       </div>
- <style jsx="true" global="true">{`
+      <style jsx="true" global="true">{`
         .swiper-pagination {
           position: relative !important;
           margin-top: 1rem;
@@ -141,7 +158,6 @@ export default function OurWork() {
           background: #0891b2;
         }
       `}</style>
-
     </section>
   );
 }

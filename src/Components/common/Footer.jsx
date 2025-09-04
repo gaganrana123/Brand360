@@ -44,7 +44,7 @@ export default function Footer() {
             Get in Touch
           </h3>
 
-          <div className="flex items-center space-x-1 mb-2">
+          <div className="flex items-start space-x-1 mb-2">
             <span className="text-cyan-300">📞</span>
             <a href="tel:9705008833" className="hover:underline">
               9705008833
@@ -56,7 +56,7 @@ export default function Footer() {
           </div>
 
           <a
-            href="mailto:brand360pvtltd@gmail.com"
+            href="mailto:info@brand360.com.np"
             className="hover:text-blue-400 transition-colors duration-300 flex items-center justify-center"
           >
             <svg
@@ -68,12 +68,12 @@ export default function Footer() {
               <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
               <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
             </svg>
-            brand360pvtltd@gmail.com
+            info@brand360.com.np
           </a>
         </div>
 
         {/* Social Media */}
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-start">
           <h3 className="text-xl font-semibold text-white mb-4">
             Connect With Us
           </h3>

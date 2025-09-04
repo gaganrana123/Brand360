@@ -134,7 +134,7 @@ Stall No. A7. 🚗✨
   },
   {
     src: "/deepal1.jpg",
-    title: "Deepal Brand Lunch in Pokhara",
+    title: "Deepal Brand Launch in Pokhara",
     slug: "deepal",
     description: `Unveiling the Future of Mobility!
 MAW Vriddhi, the official distributor of Changan in Nepal, in partnership with Himalaya Organization, proudly launched the highly anticipated Deepal EVs in Pokhara! 
@@ -143,7 +143,7 @@ MAW Vriddhi, the official distributor of Changan in Nepal, in partnership with H
   },
   {
     src: "/Kwality1.jpg",
-    title: "Kwality Ice Cream Lunch",
+    title: "Kwality Ice Cream Launch",
     slug: "kwality-ice-cream",
     description: `From Dubai's finest to Nepal's delight, Kwality Ice Cream brings you the taste of Dubai in Nepal! 🎉🍦 #TasteOfDubai #KwalityGlobalNepal #KwalityGlobal #Kwality #LifeIsDelicious #Icecream #TakeHomeTheDeliciousness 
 Event Managed by Brand Three Sixty Pvt Ltd. 
@@ -190,6 +190,5 @@ Event Organized by Mahanagar Yatayat Pvt Ltd
 Event Managed by @brandthreesixty_np 
 #brandthreesixty  #eventmanagementinnepal #mahanagaryatayat  #sustainablenepal`,
     images: ["/mng1.jpg", "/mng2.jpg", "/mng3.jpg"],
-  }
-  
+  },
 ];

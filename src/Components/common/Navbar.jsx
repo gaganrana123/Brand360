@@ -81,8 +81,8 @@ export default function Navbar() {
           <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-6 text-sm space-y-1 sm:space-y-0">
             <div className="flex items-center space-x-1">
               <span className="text-cyan-300">📧</span>
-              <a href="mailto:brand360pvtltd@gmail.com" className="hover:underline">
-                brand360pvtltd@gmail.com
+              <a href="mailto:info@brand360.com.np" className="hover:underline">
+               info@brand360.com.np
               </a>
             </div>
             <div className="flex items-center space-x-1">
