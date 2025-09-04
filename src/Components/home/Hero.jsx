@@ -15,10 +15,10 @@ export default function Hero() {
                 <div >
                   <h1 className="text-4xl md:text-4xl lg:text-4xl font-black leading-tight">
                     <div className="text-black">We are a</div>
-                    <div className="text-primary">Full-service advertising</div>
-                      <span className="text-primary"> & event management</span>{" "}
+                    <div className="text-primary">Full-service Advertising</div>
+                      <span className="text-primary"> & Event Management</span>{" "}
                       <div>
-                      <span className="text-primary">agency</span>{" "}
+                      <span className="text-primary">Agency</span>{" "}
                       <span className="text-black">based in Lalitpur</span>
                     </div>
                   </h1>
