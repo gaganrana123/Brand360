@@ -50,8 +50,8 @@ export default function Footer() {
               9705008833
             </a>
             ,
-            <a href="tel:9851096610" className="hover:underline">
-              9851096610
+            <a href="tel:9705096610" className="hover:underline">
+              9705096610
             </a>
           </div>
 

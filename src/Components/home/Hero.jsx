@@ -15,7 +15,7 @@ export default function Hero() {
                 <div >
                   <h1 className="text-4xl md:text-4xl lg:text-4xl font-black leading-tight">
                     <div className="text-black">We are a</div>
-                    <div className="text-primary">Full-service Advertising</div>
+                    <div className="text-primary">Full-Service Advertising</div>
                       <span className="text-primary"> & Event Management</span>{" "}
                       <div>
                       <span className="text-primary">Agency</span>{" "}
