@@ -72,6 +72,7 @@ const ServicePage = () => {
       {/* Hero Content */}
       <section className="relative min-h-[70vh] bg-white">
         <div className="container mx-auto px-4 h-full">
+         <div className="max-w-7xl mx-auto w-full">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[70vh] py-12 lg:py-0">
             {/* Left Side - Text Content */}
             <div className="space-y-6">
@@ -102,6 +103,7 @@ const ServicePage = () => {
                 />
               </div>
             </div>
+          </div>
           </div>
         </div>
       </section>

@@ -88,7 +88,7 @@ export default function Navbar() {
             <div className="flex items-center space-x-1">
               <span className="text-cyan-300">📞</span>
               <a href="tel:9705008833" className="hover:underline">9705008833</a>,{" "}
-              <a href="tel:9851096610" className="hover:underline">9851096610</a>
+              <a href="tel:9705096610" className="hover:underline">9705096610</a>
             </div>
           </div>
         </div>
